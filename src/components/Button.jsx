@@ -1,7 +1,8 @@
-const Button = ({ label, code, color }) => {
+const Button = ({ label, code, color, onClickHandler }) => {
   return (
     <button
-      className={`relative flex flex-col items-center justify-center w-16 h-16 bg-${color}-600 rounded-full shadow-md cursor-pointer`}
+      className={`relative flex flex-col items-center justify-center w-16 h-16 ${color} rounded-full shadow-md cursor-pointer`}
+      onClick={onClickHandler}
     >
       <p id="lap-reset-btn-label" className="text-base">
         {label}
