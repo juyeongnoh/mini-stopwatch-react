@@ -4,7 +4,8 @@ import Laps from './Laps';
 import Timer from './Timer';
 
 const Stopwatch = () => {
-  const { start, pause, createLap, laps, centisecond, isRunning } = useTimer();
+  const { start, pause, createLap, reset, laps, centisecond, isRunning } =
+    useTimer();
 
   return (
     <section className="flex flex-col justify-center max-w-sm px-8 pt-6 pb-8 m-auto mb-4 bg-white rounded shadow-md w-fit mt-36">
@@ -14,7 +15,7 @@ const Stopwatch = () => {
           label={isRunning ? '랩' : '리셋'}
           code="L"
           color="bg-gray-600"
-          onClickHandler={createLap}
+          onClickHandler={isRunning ? createLap : reset}
         />
         <Button
           label={isRunning ? '중단' : '시작'}
