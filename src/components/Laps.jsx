@@ -5,7 +5,10 @@ const Laps = ({ laps }) => {
     <article className="h-64 overflow-auto text-gray-600 border-t-2">
       <ul>
         {laps.map((lap) => (
-          <li className="flex justify-between px-3 py-2 border-b-2">
+          <li
+            key={lap[0]}
+            className="flex justify-between px-3 py-2 border-b-2"
+          >
             <span>랩 {lap[0]}</span>
             <span>{formatTime(lap[1])}</span>
           </li>
